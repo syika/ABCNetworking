@@ -28,7 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		09CA9B29BE61E28941281C90 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		09CA9B29BE61E28941281C90 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		3CDFF610DCA746305DDB0144 /* Pods_ABCNetworking_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ABCNetworking_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		53F7A7672514831DC3DD13CB /* Pods-ABCNetworking_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ABCNetworking_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ABCNetworking_Tests/Pods-ABCNetworking_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* ABCNetworking_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ABCNetworking_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,11 +41,11 @@
 		607FACE51AFB9204008FA782 /* ABCNetworking_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ABCNetworking_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		6E58898353DB9B1ABD9547F1 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		6E58898353DB9B1ABD9547F1 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		70BC2D784930B902F2F8F8AF /* Pods_ABCNetworking_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ABCNetworking_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		90A76B9A229A086AB7DD7AE3 /* Pods-ABCNetworking_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ABCNetworking_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-ABCNetworking_Example/Pods-ABCNetworking_Example.release.xcconfig"; sourceTree = "<group>"; };
 		A1D8855433DE661F34B8B9F3 /* Pods-ABCNetworking_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ABCNetworking_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ABCNetworking_Tests/Pods-ABCNetworking_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		B740984CA3C721383C57E3A1 /* ABCNetworking.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = ABCNetworking.podspec; path = ../ABCNetworking.podspec; sourceTree = "<group>"; };
+		B740984CA3C721383C57E3A1 /* ABCNetworking.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ABCNetworking.podspec; path = ../ABCNetworking.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		C4B5BCD66B9A70AFFFA1CFA8 /* Pods-ABCNetworking_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ABCNetworking_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ABCNetworking_Example/Pods-ABCNetworking_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 

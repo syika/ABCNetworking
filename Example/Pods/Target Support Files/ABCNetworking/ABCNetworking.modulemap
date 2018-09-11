@@ -1,0 +1,6 @@
+framework module ABCNetworking {
+  umbrella header "ABCNetworking-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "ABCNetworking",
+  "version": "0.1.0",
+  "summary": "Comman NetWorking Request Tools",
+  "description": "Comman NetWOrking Request Tools Based On The Layer Use Moya",
+  "homepage": "git@github.com:syika/ABCNetworking.git",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "PangJunJie": "xwhnnd@163.com"
+  },
+  "source": {
+    "git": "git@github.com:syika/ABCNetworking.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source_files": "ABCNetworking/Classes/**/*"
+}
