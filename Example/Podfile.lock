@@ -1,10 +1,27 @@
 PODS:
-  - ABCNetworking (0.1.0)
+  - ABCNetworking (0.1.0):
+    - ABCNetworking/Core (= 0.1.0)
+  - ABCNetworking/Core (0.1.0):
+    - Moya (>= 11.0.0)
+    - SwiftyJSON
+  - ABCNetworking/Rx (0.1.0):
+    - ABCNetworking/Core
+    - Moya/RxSwift (>= 11.0.0)
+    - RxSwift
+  - Alamofire (4.7.3)
   - FBSnapshotTestCase (2.1.4):
     - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
   - FBSnapshotTestCase/Core (2.1.4)
   - FBSnapshotTestCase/SwiftSupport (2.1.4):
     - FBSnapshotTestCase/Core
+  - Moya (11.0.2):
+    - Moya/Core (= 11.0.2)
+  - Moya/Core (11.0.2):
+    - Alamofire (~> 4.1)
+    - Result (~> 3.0)
+  - Moya/RxSwift (11.0.2):
+    - Moya/Core
+    - RxSwift (~> 4.0)
   - Nimble (7.0.3)
   - Nimble-Snapshots (6.3.0):
     - Nimble-Snapshots/Core (= 6.3.0)
@@ -12,9 +29,13 @@ PODS:
     - FBSnapshotTestCase (~> 2.0)
     - Nimble (~> 7.0)
   - Quick (1.2.0)
+  - Result (3.2.4)
+  - RxSwift (4.2.0)
+  - SwiftyJSON (4.1.0)
 
 DEPENDENCIES:
   - ABCNetworking (from `../`)
+  - ABCNetworking/Rx (from `../`)
   - FBSnapshotTestCase (~> 2.1.4)
   - Nimble (~> 7.0.2)
   - Nimble-Snapshots (~> 6.3.0)
@@ -22,22 +43,32 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Alamofire
     - FBSnapshotTestCase
+    - Moya
     - Nimble
     - Nimble-Snapshots
     - Quick
+    - Result
+    - RxSwift
+    - SwiftyJSON
 
 EXTERNAL SOURCES:
   ABCNetworking:
     :path: "../"
 
 SPEC CHECKSUMS:
-  ABCNetworking: 6b14224074cc62043e123cda1a91889de6ff8d88
+  ABCNetworking: 41931dee8acacd22560e37496b164b58f76bb64b
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
+  Moya: a725035953bc1c0eb1be505ab903984501d82440
   Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
   Nimble-Snapshots: f5459b5b091678dc942d03ec4741cacb58ba4a52
   Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
+  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
+  RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
+  SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
 
-PODFILE CHECKSUM: 3e6568ce760b956389de9541f14beab205231c57
+PODFILE CHECKSUM: 4560cda3e9b7ec8e33f6c811abdd9d43a0fbf7b2
 
 COCOAPODS: 1.5.3

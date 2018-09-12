@@ -18,5 +18,34 @@
   "platforms": {
     "ios": "9.0"
   },
-  "source_files": "ABCNetworking/Classes/**/*"
+  "default_subspecs": "Core",
+  "subspecs": [
+    {
+      "name": "Core",
+      "source_files": "ABCNetworking/Classes/Core",
+      "dependencies": {
+        "Moya": [
+          ">= 11.0.0"
+        ],
+        "SwiftyJSON": [
+
+        ]
+      }
+    },
+    {
+      "name": "Rx",
+      "source_files": "ABCNetworking/Classes/Rx",
+      "dependencies": {
+        "Moya/RxSwift": [
+          ">= 11.0.0"
+        ],
+        "RxSwift": [
+
+        ],
+        "ABCNetworking/Core": [
+
+        ]
+      }
+    }
+  ]
 }
