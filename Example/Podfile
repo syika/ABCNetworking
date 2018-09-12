@@ -3,6 +3,7 @@ use_frameworks!
 target 'ABCNetworking_Example' do
   pod 'ABCNetworking', :path => '../'
   pod 'ABCNetworking/Rx', :path => '../'
+  pod 'RxDataSources', '~> 3.0'
 
   target 'ABCNetworking_Tests' do
     inherit! :search_paths

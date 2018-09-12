@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		031521CC2148AC010092339F /* Pods_ABCNetworking_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 031521CB2148AC010092339F /* Pods_ABCNetworking_Example.framework */; };
+		031521D52148DEB20092339F /* NormalRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031521D42148DEB20092339F /* NormalRequestViewController.swift */; };
+		031521D72148DECC0092339F /* RxSwiftRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031521D62148DECC0092339F /* RxSwiftRequestViewController.swift */; };
+		031521D92148DEF00092339F /* EmbeddedRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031521D82148DEF00092339F /* EmbeddedRequestViewController.swift */; };
+		031521DB2148DF730092339F /* BasedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031521DA2148DF730092339F /* BasedViewController.swift */; };
+		031521DE2148E1890092339F /* ABCNetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031521DD2148E1890092339F /* ABCNetManager.swift */; };
+		031521E12148E34B0092339F /* MyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031521E02148E34B0092339F /* MyModel.swift */; };
+		031521E52148E85B0092339F /* RxDataSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031521E42148E85B0092339F /* RxDataSections.swift */; };
+		031521E72148ED5B0092339F /* EmbeddedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031521E62148ED5B0092339F /* EmbeddedModel.swift */; };
 		3C296D7CDD40D6BAD6A08DB1 /* Pods_ABCNetworking_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CDFF610DCA746305DDB0144 /* Pods_ABCNetworking_Tests.framework */; };
 		50D7C37AF8E5C213820C6B24 /* Pods_ABCNetworking_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 031521B72147A6C30092339F /* Pods_ABCNetworking_Tests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
@@ -40,6 +48,15 @@
 		031521BB2147A6CB0092339F /* Result.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Result.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		031521C02147ACE30092339F /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		031521CB2148AC010092339F /* Pods_ABCNetworking_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_ABCNetworking_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		031521D42148DEB20092339F /* NormalRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalRequestViewController.swift; sourceTree = "<group>"; };
+		031521D62148DECC0092339F /* RxSwiftRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftRequestViewController.swift; sourceTree = "<group>"; };
+		031521D82148DEF00092339F /* EmbeddedRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddedRequestViewController.swift; sourceTree = "<group>"; };
+		031521DA2148DF730092339F /* BasedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasedViewController.swift; sourceTree = "<group>"; };
+		031521DD2148E1890092339F /* ABCNetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABCNetManager.swift; sourceTree = "<group>"; };
+		031521E02148E34B0092339F /* MyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyModel.swift; sourceTree = "<group>"; };
+		031521E22148E77D0092339F /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		031521E42148E85B0092339F /* RxDataSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxDataSections.swift; sourceTree = "<group>"; };
+		031521E62148ED5B0092339F /* EmbeddedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddedModel.swift; sourceTree = "<group>"; };
 		09CA9B29BE61E28941281C90 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		3CDFF610DCA746305DDB0144 /* Pods_ABCNetworking_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ABCNetworking_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		53F7A7672514831DC3DD13CB /* Pods-ABCNetworking_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ABCNetworking_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ABCNetworking_Tests/Pods-ABCNetworking_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -82,6 +99,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		031521D32148DE920092339F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				031521D42148DEB20092339F /* NormalRequestViewController.swift */,
+				031521D62148DECC0092339F /* RxSwiftRequestViewController.swift */,
+				031521D82148DEF00092339F /* EmbeddedRequestViewController.swift */,
+				031521DA2148DF730092339F /* BasedViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		031521DC2148E1750092339F /* NetRequestManager */ = {
+			isa = PBXGroup;
+			children = (
+				031521DD2148E1890092339F /* ABCNetManager.swift */,
+			);
+			path = NetRequestManager;
+			sourceTree = "<group>";
+		};
+		031521DF2148E3350092339F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				031521E02148E34B0092339F /* MyModel.swift */,
+				031521E42148E85B0092339F /* RxDataSections.swift */,
+				031521E62148ED5B0092339F /* EmbeddedModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
@@ -106,8 +153,10 @@
 		607FACD21AFB9204008FA782 /* Example for ABCNetworking */ = {
 			isa = PBXGroup;
 			children = (
+				031521DF2148E3350092339F /* Models */,
+				031521DC2148E1750092339F /* NetRequestManager */,
+				031521D32148DE920092339F /* ViewControllers */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -155,6 +204,7 @@
 		C17AEF7344B78C5DEA51E6FE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				031521E22148E77D0092339F /* RxSwift.framework */,
 				031521CB2148AC010092339F /* Pods_ABCNetworking_Example.framework */,
 				031521C02147ACE30092339F /* RxSwift.framework */,
 				031521BB2147A6CB0092339F /* Result.framework */,
@@ -296,8 +346,11 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-ABCNetworking_Example/Pods-ABCNetworking_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ABCNetworking/ABCNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
@@ -305,8 +358,11 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ABCNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
@@ -382,8 +438,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				031521DE2148E1890092339F /* ABCNetManager.swift in Sources */,
+				031521E72148ED5B0092339F /* EmbeddedModel.swift in Sources */,
+				031521DB2148DF730092339F /* BasedViewController.swift in Sources */,
+				031521D72148DECC0092339F /* RxSwiftRequestViewController.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				031521D52148DEB20092339F /* NormalRequestViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				031521D92148DEF00092339F /* EmbeddedRequestViewController.swift in Sources */,
+				031521E12148E34B0092339F /* MyModel.swift in Sources */,
+				031521E52148E85B0092339F /* RxDataSections.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

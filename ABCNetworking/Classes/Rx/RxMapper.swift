@@ -9,11 +9,7 @@ import RxSwift
 import Moya
 import SwiftyJSON
 
-/**
- * @title RxMapper
- * @description response转换实现为Observable<Model>
- * @author PangJunJie
- */
+// MARK: - 将response转换实现为Observable<Any>
 extension ObservableType where E == Response {
     /// Response -> Observable<JSON>
     ///

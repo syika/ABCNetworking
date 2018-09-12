@@ -46,8 +46,11 @@ public extension Modelable {
 public extension Array where Element: Modelable {
     func toJSONString() -> String {
         let dictArr = self.map { $0.toDictionary() }
+        
         guard let data = try? JSONSerialization.data(withJSONObject: dictArr, options: .prettyPrinted) else { return "" }
+        
         guard let json = try? JSON(data: data) else { return "" }
+        
         return json.rawString() ?? ""
     }
 }
