@@ -12,6 +12,7 @@ import RxSwift
 import RxCocoa
 import RxDataSources
 import ABCNetworking
+import HandyJSON
 
 class RxSwiftRequestViewController: BasedViewController {
     //MARK: Properties
@@ -63,6 +64,24 @@ class RxSwiftRequestViewController: BasedViewController {
 
 // MARK: - Touch Event
 extension RxSwiftRequestViewController {
+    func mapModels() -> Void {
+        #if false
+        request.fetchJSONString().subscribe(onSuccess: { (str) in
+            if let models = [HandyModel].deserialize(from: str) {
+                models.forEach({ (model) in
+                    print(model ?? "")
+                })
+            }
+        }).disposed(by: disbag)
+        #endif
+        request.mapHandyModelsWithResult(HandyModel.self) { () -> (ModelableParameterType.Type) in
+            return CustomNetParameter.self
+            }.subscribe(onSuccess: { (result, array) in
+                print(result)
+                print(array)
+            }).disposed(by: disbag)
+    }
+    
     func models() -> Void {
         request.mapArray(MyModel.self).subscribe(onSuccess: { (models) in
             for model in models {
@@ -94,10 +113,12 @@ extension RxSwiftRequestViewController {
     
     fileprivate func fetchString() {
         // 获取指定路径的值
+        #if true
         request.fetchString(keys: [0, "_id"]).subscribe(onSuccess: { str in
             // 取第1条数据中的'_id'字段对应的值
             print("str -- \(str)")
         }).disposed(by: disbag)
+        #endif
     }
     
     fileprivate func customNetParamer() {
@@ -131,7 +152,7 @@ extension RxSwiftRequestViewController: UITableViewDelegate {
         tableView.rx.modelSelected(RxDataSectionItem.self).subscribe(onNext: { [weak self](item) in
             switch item {
             case .models:
-                self?.models()
+                self?.mapModels()
             case .result:
                 self?.result()
             case .modelsResult:

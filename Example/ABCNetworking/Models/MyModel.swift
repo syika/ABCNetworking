@@ -7,6 +7,7 @@
 //
 
 import SwiftyJSON
+import HandyJSON
 import ABCNetworking
 
 struct MyModel: Modelable {
@@ -33,3 +34,35 @@ struct MyModel: Modelable {
         self.who = json["who"].stringValue
     }
 }
+
+struct HandyModel: HandyJSON {
+    var _id : String = ""
+    var createdAt : String = ""
+    var desc : String = ""
+    var publishedAt : String = ""
+    var source : String = ""
+    var type : String = ""
+    var url : String = ""
+    var used : String = ""
+    var who : String = ""
+}
+
+struct HandyModels: HandyJSON {
+    var results: [HandyModel] = []
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

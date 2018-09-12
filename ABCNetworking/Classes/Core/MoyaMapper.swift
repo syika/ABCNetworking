@@ -6,6 +6,7 @@
 //
 
 import Moya
+import HandyJSON
 import SwiftyJSON
 
 public typealias ModelableParamsBlock = ()->(ModelableParameterType.Type)
@@ -166,6 +167,43 @@ extension Response {
     }
 }
 
+// MARK: - 将Json转换为对应的Model
+extension Response {
+    #if false
+    func mapHandyModel<T>(_ type: T.Type) throws -> MoyaResult<T> {
+        // 转换成 json
+        guard let jsonObj = try? JSONSerialization.jsonObject(with: data, options: .mutableLeaves) else {
+            // 如果失败，转换成错误信息
+            guard let string = String(data: data, encoding: .utf8) else {
+                throw MoyaError.stringMapping(self)
+            }
+            
+            print(string)
+            
+            // 抛出异常
+            throw MoyaError.jsonMapping(self)
+        }
+        
+        // 进行 json utf-8编码
+        guard let jsonData = try? JSONSerialization.data(withJSONObject: jsonObj, options: .prettyPrinted), let jsonString = String(data: jsonData, encoding: .utf8) else {
+            throw MoyaError.jsonMapping(self)
+        }
+        
+        // 转模型
+        guard let model = JSONDeserializer<BaseData<T>>.deserializeFrom(json: jsonString) else {
+            throw MoyaError.jsonMapping(self)
+        }
+        
+        // 返回数据
+        if model.errcode == 0 {
+            return .success(model.data)
+        } else {
+            return MoyaResult.failure(model.errcode, model.errmsg)
+        }
+    }
+    #endif
+}
+
 // MARK:- Runtime 主要用于CatchError
 extension Response {
     /// 创建Response
@@ -195,7 +233,7 @@ extension Response {
         static var modelableParameterKey = "modelableParameterKey"
     }
     
-    fileprivate var modelableParameter: ModelableParameterType.Type {
+    var modelableParameter: ModelableParameterType.Type {
         get {
             // https://stackoverflow.com/questions/42033735/failing-cast-in-swift-from-any-to-protocol/42034523#42034523
             let value = objc_getAssociatedObject(self, &AssociatedKeys.modelableParameterKey) as AnyObject

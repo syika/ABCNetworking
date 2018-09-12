@@ -26,6 +26,7 @@ Pod::Spec.new do |s|
   s.subspec "Rx" do |rx|
       rx.source_files = "ABCNetworking/Classes/Rx"
       rx.dependency "Moya/RxSwift", ">= 11.0.0"
+      rx.dependency 'HandyJSON', '~> 4.1.1'
       rx.dependency "RxSwift"
       rx.dependency "ABCNetworking/Core"
   end

@@ -69,10 +69,10 @@ let netManager = MoyaProvider<NetManager>(plugins: [MoyaMapperPlugin(NetParamete
 
 // MARK:- 自定义网络结果参数
 struct CustomNetParameter: ModelableParameterType {
-    static var successValue: String { return "000" }
-    static var statusCodeKey: String { return "retCode" }
-    static var tipStrKey: String { return "retMsg" }
-    static var modelKey: String { return "retBody"}
+    static var successValue: String { return "false" }
+    static var statusCodeKey: String { return "error" }
+    static var tipStrKey: String { return "errMsg" }
+    static var modelKey: String { return "results"}
 }
 
 

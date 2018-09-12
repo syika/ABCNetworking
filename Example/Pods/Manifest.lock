@@ -6,6 +6,7 @@ PODS:
     - SwiftyJSON
   - ABCNetworking/Rx (0.1.0):
     - ABCNetworking/Core
+    - HandyJSON (~> 4.1.1)
     - Moya/RxSwift (>= 11.0.0)
     - RxSwift
   - Alamofire (4.7.3)
@@ -15,6 +16,7 @@ PODS:
   - FBSnapshotTestCase/Core (2.1.4)
   - FBSnapshotTestCase/SwiftSupport (2.1.4):
     - FBSnapshotTestCase/Core
+  - HandyJSON (4.1.3)
   - Moya (11.0.2):
     - Moya/Core (= 11.0.2)
   - Moya/Core (11.0.2):
@@ -54,6 +56,7 @@ SPEC REPOS:
     - Alamofire
     - Differentiator
     - FBSnapshotTestCase
+    - HandyJSON
     - Moya
     - Nimble
     - Nimble-Snapshots
@@ -69,10 +72,11 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  ABCNetworking: 41931dee8acacd22560e37496b164b58f76bb64b
+  ABCNetworking: 3010bf0e8541210797647196c39c4881f5cf19b1
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   Differentiator: a87be69eba49ec4ab460c7671143ee3a9eececfd
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
+  HandyJSON: bc81fbeb62d65ae5d5942ed29bc4a8265d18c1e8
   Moya: a725035953bc1c0eb1be505ab903984501d82440
   Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
   Nimble-Snapshots: f5459b5b091678dc942d03ec4741cacb58ba4a52

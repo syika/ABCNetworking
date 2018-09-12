@@ -1,5 +1,5 @@
 //
-//  RxMapper.swift
+//  RxSwiftyJsonMapper.swift
 //  Pods
 //
 //  Created by PangJunJie on 2018/9/12.
@@ -8,7 +8,9 @@
 import RxSwift
 import Moya
 import SwiftyJSON
+import HandyJSON
 
+// MARK: - 基于SwiftyJson实现
 // MARK: - 将response转换实现为Observable<Any>
 extension ObservableType where E == Response {
     /// Response -> Observable<JSON>
@@ -200,3 +202,32 @@ extension PrimitiveSequence where TraitType == SingleTrait, E == Response {
         })
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

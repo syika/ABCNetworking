@@ -39,6 +39,9 @@
         "Moya/RxSwift": [
           ">= 11.0.0"
         ],
+        "HandyJSON": [
+          "~> 4.1.1"
+        ],
         "RxSwift": [
 
         ],
