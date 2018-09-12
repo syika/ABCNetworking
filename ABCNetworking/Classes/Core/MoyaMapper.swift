@@ -96,6 +96,18 @@ extension Response {
         return toModel(type, modelJson: resJson)
     }
     
+    /// Response -> HandJsonModel
+    ///
+    /// - Parameters:
+    ///   - type: 模型类型
+    ///   - modelKey: 模型数据路径
+    /// - Returns: 模型
+    public func mapModel<T: HandyJSON>(_ type: T.Type, modelKey: String? = nil) -> T? {
+        let resJson = toJSON(modelKey: modelKey)
+        
+        return T.deserialize(from: resJson.rawString() ?? "")
+    }
+    
     /// Response -> MoyaMapperResult
     ///
     /// - Parameter params: 自定义解析的设置回调
@@ -130,6 +142,23 @@ extension Response {
         
         return ((isSuccess, retMsg), model)
     }
+    
+    // Response -> (MoyaMapperResult, HandyJsonModel)
+    ///
+    /// - Parameters:
+    ///   - type: 模型类型
+    ///   - params: 自定义解析的设置回调
+    /// - Returns: (MoyaMapperResult, HandyJsonModel)
+    public func mapModelResult<T: HandyJSON>(_ type: T.Type, params: ModelableParamsBlock? = nil) -> (MoyaMapperResult, T?) {
+        let parameter = params != nil ? params!() : modelableParameter
+        
+        let modelKey = parameter.modelKey
+        let (isSuccess, retMsg) = mapResult(params: params)
+        
+        let model = mapModel(type, modelKey: modelKey)
+        
+        return ((isSuccess, retMsg), model)
+    }
 }
 
 // MARK: - 将Json数据转换为Models(数组)
@@ -150,6 +179,20 @@ extension Response {
         return jsonArr.compactMap { toModel(type, modelJson: $0) }
     }
     
+    /// Response -> [HandyJsonModel]
+    ///
+    /// - Parameters:
+    ///   - type: 模型类型
+    ///   - modelKey: 模型路径
+    /// - Returns: 模型数组
+    public func mapModelArray<T: HandyJSON>(_ type: T.Type, modelKey: String? = nil) -> [T] {
+        let target_modelKey = modelKey == nil ? self.modelableParameter.modelKey : modelKey!
+        
+        let jsonArr = toJSON(modelKey: target_modelKey).arrayValue
+        
+        return jsonArr.compactMap { T.deserialize(from: $0.rawString() ?? "") }
+    }
+    
     /// Response -> (MoyaMapperResult, [Model])
     ///
     /// - Parameters:
@@ -163,6 +206,23 @@ extension Response {
         let result = mapResult(params: params)
         
         let models = mapArray(type, modelKey: modelKey)
+        return (result, models)
+    }
+    
+    /// Response -> (MoyaMapperResult, [HandyJsonModel])
+    ///
+    /// - Parameters:
+    ///   - type: 模型类型
+    ///   - params: 自定义解析的设置回调
+    /// - Returns: (MoyaMapperResult, [HandyJsonModel])
+    public func mapModelArrayResult<T: HandyJSON>(_ type: T.Type, params: ModelableParamsBlock? = nil) -> (MoyaMapperResult, [T]) {
+        let parameter = params != nil ? params!() : modelableParameter
+        
+        let modelKey = parameter.modelKey
+        let result = mapResult(params: params)
+        
+        let models = mapModelArray(type, modelKey: modelKey)
+        
         return (result, models)
     }
 }

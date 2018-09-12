@@ -21,9 +21,7 @@ extension ObservableType where E == Response {
     /// - Returns: Observable<Model>
     public func mapHandyModel<T: HandyJSON>(_ type: T.Type, modelKey: String? = nil) -> Observable<T?> {
         return flatMap { response -> Observable<T?> in
-            let resJson = response.toJSON(modelKey: modelKey)
-            
-            return Observable.just(T.deserialize(from: resJson.rawString() ?? ""))
+            return Observable.just(response.mapModel(type))
         }
     }
     
@@ -35,10 +33,7 @@ extension ObservableType where E == Response {
     /// - Returns: Observable<(MoyaMapperResult, T?)>
     public func mapHandyModelWithResult<T: HandyJSON>(_ type: T.Type, params: ModelableParamsBlock? = nil) -> Observable<(MoyaMapperResult, T?)> {
         return flatMap { response -> Observable<(MoyaMapperResult, T?)> in
-            let resJson = response.toJSON()
-            let result = response.mapResult(params: params)
-            
-            return Observable.just((result, T.deserialize(from: resJson.rawString() ?? "")))
+            return Observable.just(response.mapModelResult(type))
         }
     }
     
@@ -53,10 +48,7 @@ extension ObservableType where E == Response {
                                              designatedPath path: String? = nil,
                                              keys: [JSONSubscriptType] = []) -> Observable<[T]> {
         return flatMap { response ->  Observable<[T]> in
-            let target_modelKey = path == nil ? response.modelableParameter.modelKey : path!
-            let jsonArr = response.toJSON(modelKey: target_modelKey).arrayValue
-            
-            return Observable.just(jsonArr.compactMap({T.deserialize(from: $0.rawString() ?? "")}))
+            return Observable.just(response.mapModelArray(type))
         }
     }
     
@@ -68,13 +60,7 @@ extension ObservableType where E == Response {
     /// - Returns: Observable<(MoyaMapperResult, T?)>
     public func mapHandyModelsWithResult<T: HandyJSON>(_ type: T.Type, params: ModelableParamsBlock? = nil) -> Observable<(MoyaMapperResult, [T])> {
         return flatMap { response -> Observable<(MoyaMapperResult, [T])> in
-            let parameter = params != nil ? params!() : response.modelableParameter
-            
-            let modelKey = parameter.modelKey
-            let result = response.mapResult(params: params)
-            
-            let jsonArr = response.toJSON(modelKey: modelKey).arrayValue
-            return Observable.just((result, jsonArr.compactMap({T.deserialize(from: $0.rawString() ?? "")})))
+            return Observable.just(response.mapModelArrayResult(type))
         }
     }
 }
@@ -89,9 +75,7 @@ extension PrimitiveSequence where TraitType == SingleTrait, E == Response {
     /// - Returns: Single<Model>
     public func mapHandyModel<T: HandyJSON>(_ type: T.Type, modelKey: String? = nil) -> Single<T?> {
         return flatMap { response -> Single<T?> in
-            let resJson = response.toJSON(modelKey: modelKey)
-            
-            return Single.just(T.deserialize(from: resJson.rawString() ?? ""))
+            return Single.just(response.mapModel(type))
         }
     }
     
@@ -106,10 +90,7 @@ extension PrimitiveSequence where TraitType == SingleTrait, E == Response {
                                              designatedPath path: String? = nil,
                                              keys: [JSONSubscriptType] = []) -> Single<[T]> {
         return flatMap { response ->  Single<[T]> in
-            let target_modelKey = path == nil ? response.modelableParameter.modelKey : path!
-            let jsonArr = response.toJSON(modelKey: target_modelKey).arrayValue
-            
-            return Single.just(jsonArr.compactMap({T.deserialize(from: $0.rawString() ?? "")}))
+            return Single.just(response.mapModelArray(type))
         }
     }
     
@@ -121,10 +102,7 @@ extension PrimitiveSequence where TraitType == SingleTrait, E == Response {
     /// - Returns: Single<(MoyaMapperResult, T?)>
     public func mapHandyModelWithResult<T: HandyJSON>(_ type: T.Type, params: ModelableParamsBlock? = nil) -> Single<(MoyaMapperResult, T?)> {
         return flatMap { response -> Single<(MoyaMapperResult, T?)> in
-            let resJson = response.toJSON()
-            let result = response.mapResult(params: params)
-            
-            return Single.just((result, T.deserialize(from: resJson.rawString() ?? "")))
+            return Single.just(response.mapModelResult(type))
         }
     }
     /// mapHandyModelsWithResult
@@ -135,13 +113,7 @@ extension PrimitiveSequence where TraitType == SingleTrait, E == Response {
     /// - Returns: Single<(MoyaMapperResult, T?)>
     public func mapHandyModelsWithResult<T: HandyJSON>(_ type: T.Type, params: ModelableParamsBlock? = nil) -> Single<(MoyaMapperResult, [T])> {
         return flatMap { response -> Single<(MoyaMapperResult, [T])> in
-            let parameter = params != nil ? params!() : response.modelableParameter
-            
-            let modelKey = parameter.modelKey
-            let result = response.mapResult(params: params)
-            
-            let jsonArr = response.toJSON(modelKey: modelKey).arrayValue
-            return Single.just((result, jsonArr.compactMap({T.deserialize(from: $0.rawString() ?? "")})))
+            return Single.just(response.mapModelArrayResult(type))
         }
     }
 }

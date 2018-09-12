@@ -73,12 +73,20 @@ extension RxSwiftRequestViewController {
                 })
             }
         }).disposed(by: disbag)
-        #endif
+        
         request.mapHandyModelsWithResult(HandyModel.self) { () -> (ModelableParameterType.Type) in
             return CustomNetParameter.self
             }.subscribe(onSuccess: { (result, array) in
                 print(result)
                 print(array)
+            }).disposed(by: disbag)
+        #endif
+        
+        request.mapHandyModelWithResult(HandyModels.self) { () -> (ModelableParameterType.Type) in
+            return CustomNetParameter.self
+            }.subscribe(onSuccess: { (result, model) in
+                print(result)
+                print(model ?? "model is nil")
             }).disposed(by: disbag)
     }
     
