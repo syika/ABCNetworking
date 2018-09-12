@@ -12,13 +12,17 @@ public protocol MoyaConvertable: Codable {}
 public extension MoyaConvertable {
     func toData() -> Data? {
         let encoder = JSONEncoder()
+        
         guard let data = try? encoder.encode(self) else { return nil }
+        
         return data
     }
     
     func toDictionary() -> [String: Any] {
         guard let data = toData() else { return [:] }
+        
         guard let dict = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? Dictionary<String, Any> else { return [:] }
+        
         return dict ?? [:]
     }
     
@@ -28,6 +32,7 @@ public extension MoyaConvertable {
     
     func toJSON() -> JSON {
         guard let data = toData() else { return JSON() }
+        
         return JSON(data)
     }
 }
